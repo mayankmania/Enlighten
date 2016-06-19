@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="el.controller">
+
+<head>
+    <title>Enlighten</title>
+    <style type="text/css" src="assets/css/bootstrap.css"></style>
+    <base href="/">
+</head>
+
+<body ng-controller="MainController" ng-cloak="">
+    <div style="width:100%">
+        <div style="float:left">
+            <ul>
+                <li>
+                    <a href="Employee"> My Details</a>
+                </li>
+                <li>
+                    <a href="Courses">Moby</a>
+                </li>
+            </ul>
+        </div>
+        <div ng-view>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/js/angular.min.js"></script>
+    <script type="text/javascript" src="assets/js/angular-route.js"></script>
+    <script type="text/javascript" src="app/components/mainController.js"></script>
+    <script type="text/javascript" src="app/components/employee/empController.js"></script>
+    <script type="text/javascript" src="app/components/employee/empService.js"></script>
+    <script type="text/javascript" src="app/components/course/courseController.js"></script>
+    <script type="text/javascript" src="app/components/course/courseService.js"></script>
+    <script type="text/javascript" src="app/app.module.js"></script>
+</body>
+
+</html>
