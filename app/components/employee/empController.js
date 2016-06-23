@@ -2,4 +2,5 @@
 /// <reference path="../../app.module.js" />
 
 var employeeController = function ($scope) {
+
 };
