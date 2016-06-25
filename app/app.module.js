@@ -25,3 +25,4 @@ elController.config(function ($routeProvider, $locationProvider) {
 
 //Register all the services in el.services module
 elServices.service('EmployeeService', employeeService);
+elServices.service('CourseService', courseService);

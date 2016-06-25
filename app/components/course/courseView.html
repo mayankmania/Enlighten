@@ -6,108 +6,80 @@
     </li>
     <li>
         <i class="icon-edit"></i>
-        <a href="#">Course</a>
+        <a href="#">Education</a>
     </li>
 </ul>
 
 <div class="row-fluid">
-
     <div class="box span12">
         <div class="box-header">
             <h2><i class="halflings-icon th"></i><span class="break"></span>Tabs</h2>
         </div>
         <div class="box-content">
-            <ul class="nav tab-menu nav-tabs" id="myTab" ng-init="selectedTab = 'PersonalInfo'">
-                <li ng-class="{'active':selectedTab === 'EducationalInfo'}" ng-click="selectedTab = 'EducationalInfo'"><a href="#">Educational Info</a></li>
-                <li ng-class="{'active':selectedTab === 'PersonalInfo'}" ng-click="selectedTab = 'PersonalInfo'"><a href="#">Personal Details</a></li>
+            <ul class="nav tab-menu nav-tabs" id="myTab" ng-init="courseSelectedTab = 'MyCourse'">
+                <li ng-class="{'active':courseSelectedTab === 'Courses'}" ng-click="courseSelectedTab = 'Courses'"><a href="#">Courses Available</a></li>
+                <li ng-class="{'active':courseSelectedTab === 'MyCourse'}" ng-click="courseSelectedTab = 'MyCourse'"><a href="#">My Courses</a></li>
             </ul>
 
-            <div id="myTabContent" class="tab-content">
-                <div class="tab-pane" ng-class="{'active':selectedTab === 'PersonalInfo'}" id="info">
+            <div id="courseTabContent" class="tab-content">
+                <div class="tab-pane" ng-class="{'active':courseSelectedTab === 'MyCourse'}" id="myCourse">
                     <p>
-                        <div class="box-content">
-                            <form class="form-horizontal">
-                                <fieldset>
-                                    <div class="control-group">
-                                        <label class="control-label" for="typeahead">Auto complete </label>
-                                        <div class="controls">
-                                            <input type="text" class="span6 typeahead" id="typeahead" data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
-                                            <p class="help-block">Start typing to activate auto complete!</p>
-                                        </div>
-                                    </div>
-                                    <div class="control-group">
-                                        <label class="control-label" for="date01">Date input</label>
-                                        <div class="controls">
-                                            <input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label class="control-label" for="fileInput">File input</label>
-                                        <div class="controls">
-                                            <input class="input-file uniform_on" id="fileInput" type="file">
-                                        </div>
-                                    </div>
-                                    <div class="control-group hidden-phone">
-                                        <label class="control-label" for="textarea2">Textarea WYSIWYG</label>
-                                        <div class="controls">
-                                            <textarea class="cleditor" id="textarea2" rows="3"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
-                                        <button type="reset" class="btn">Cancel</button>
-                                    </div>
-                                </fieldset>
-                            </form>
-
-                        </div>
+                        <table class="table table-bordered table-striped table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Sr. No</th>
+                                    <th>Name</th>
+                                    <th>Summary</th>
+                                    <th>Timings</th>
+                                    <th>Speaker</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="mc in course.myCourses track by $index">
+                                    <td>{{$index+1}}</td>
+                                    <td>{{mc.name}}</td>
+                                    <td>{{mc.summary}}</td>
+                                    <td>{{mc.timings}}</td>
+                                    <td>{{mc.speaker}}</td>
+                                    <td>{{mc.startDate}}</td>
+                                    <td>{{mc.endDate}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </p>
                 </div>
-                <div class="tab-pane" ng-class="{'active':selectedTab === 'EducationalInfo'}" id="custom">
+                <div class="tab-pane" ng-class="{'active':courseSelectedTab === 'Courses'}" id="courses">
                     <p>
-                        <div class="box-content">
-                            <form class="form-horizontal">
-                                <fieldset>
-                                    <div class="control-group">
-                                        <label class="control-label" for="typeahead">Auto complete </label>
-                                        <div class="controls">
-                                            <input type="text" class="span6 typeahead" id="typeahead" data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
-                                            <p class="help-block">Start typing to activate auto complete!</p>
-                                        </div>
-                                    </div>
-                                    <div class="control-group">
-                                        <label class="control-label" for="date01">Date input</label>
-                                        <div class="controls">
-                                            <input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label class="control-label" for="fileInput">File input</label>
-                                        <div class="controls">
-                                            <input class="input-file uniform_on" id="fileInput" type="file">
-                                        </div>
-                                    </div>
-                                    <div class="control-group hidden-phone">
-                                        <label class="control-label" for="textarea2">Textarea WYSIWYG</label>
-                                        <div class="controls">
-                                            <textarea class="cleditor" id="textarea2" rows="3"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
-                                        <button type="reset" class="btn">Cancel</button>
-                                    </div>
-                                </fieldset>
-                            </form>
-
-                        </div>
+                        <table class="table table-bordered table-striped table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Sr. No</th>
+                                    <th>Name</th>
+                                    <th>Summary</th>
+                                    <th>Timings</th>
+                                    <th>Speaker</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="ac in course.availableCourses track by $index">
+                                    <td>{{$index+1}}</td>
+                                    <td>{{ac.name}}</td>
+                                    <td>{{ac.summary}}</td>
+                                    <td>{{ac.timings}}</td>
+                                    <td>{{ac.speaker}}</td>
+                                    <td>{{ac.startDate}}</td>
+                                    <td>{{ac.endDate}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </p>
                 </div>
             </div>
         </div>
     </div>
     <!--/span-->
-
 </div>
