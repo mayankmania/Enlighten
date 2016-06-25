@@ -1,5 +1,7 @@
+'use strict'
+
 /// <reference path="../typings/angularjs/angular.d.ts" />
-var elController = angular.module('el.controller', ['el.services', 'ngRoute']);
+var elController = angular.module('el.controller', ['el.services', 'ngRoute','ngAnimate']);
 var elServices = angular.module('el.services', []);
 //Shared directives must go here
 var elDirectives = angular.module('el.directives', ['el.services']);

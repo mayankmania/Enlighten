@@ -8,4 +8,3 @@ var courseController = function ($scope,CourseService) {
     CourseService.save($scope.course);
   }
 };
-
