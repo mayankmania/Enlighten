@@ -17,7 +17,9 @@ elController.config(function ($routeProvider, $locationProvider) {
         }).when('/Courses', {
             templateUrl: 'app/components/course/courseView.html',
             controller: 'CourseController'
-        });
+        }).otherwise({
+            redirectTo: '/'
+        });;
     //configure html5 to get links working on jsfiddle
     $locationProvider.html5Mode(true);
 });
