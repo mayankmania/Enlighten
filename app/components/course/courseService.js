@@ -34,5 +34,3 @@ var courseService = function ($http) {
         return course;
     }
 }
-
-
