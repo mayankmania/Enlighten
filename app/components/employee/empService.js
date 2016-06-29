@@ -17,7 +17,7 @@ var employeeService = function ($http) {
     //If employee data not present get it from service (Web API)
     var intialize = function () {
         var personInfo = new PersonInfo('Mayank', 'A12', '3095');
-        var eI = [new EducationInfo('1','MCA', 'Mumbai', '2010', '72')];
+        var eI = [new EducationInfo('MCA', 'Mumbai', '2010', '72')];
         var employee = new Employee(personInfo, eI);
         return employee;
     };
