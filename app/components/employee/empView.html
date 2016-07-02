@@ -63,6 +63,7 @@
                                     <th>University</th>
                                     <th>Year</th>
                                     <th>Percentage</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -72,9 +73,47 @@
                                     <td>{{eI.university}}</td>
                                     <td>{{eI.year}}</td>
                                     <td>{{eI.percentage}}</td>
+                                    <td><a ng-click="viewQualificationDetails(eI)" href="javascript:void(0);">View</a> </td>
                                 </tr>
                             </tbody>
                         </table>
+                    </p>
+                    <p>
+                        <div class="box-content">
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <div class="control-group">
+                                        <label class="control-label" for="degree">Degree</label>
+                                        <div class="controls">
+                                            <input type="text" ng-model="selectedEducationInfo.degree">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="university">University</label>
+                                        <div class="controls">
+                                            <input type="text" ng-model="selectedEducationInfo.university">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="year">Year</label>
+                                        <div class="controls">
+                                            <input type="text" ng-model="selectedEducationInfo.year">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="percentage">Percentage</label>
+                                        <div class="controls">
+                                            <input type="text" ng-model="selectedEducationInfo.percentage">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary" ng-click="updateQualificationDetails();">Save changes</button>
+                                        <button type="reset" class="btn">Cancel</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
                     </p>
                 </div>
             </div>

@@ -4,6 +4,7 @@
 
 //Get data from real service
 var employeeService = function ($http) {
+    
     this.get = function () {
         this.employee = this.employee || intialize();
         return this.employee;
