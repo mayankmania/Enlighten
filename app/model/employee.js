@@ -4,7 +4,8 @@ function PersonInfo(name, cadre, extension) {
     this.extension = extension;
 }
 
-function EducationInfo(degree, university, year, percentage) {
+function EducationInfo(id,degree, university, year, percentage) {
+    this.id=id;
     this.degree = degree;
     this.university = university;
     this.year = year;
