@@ -2,11 +2,14 @@
 /// <reference path="../../app.module.js" />
 /// <reference path="../../model/employee.js" />
 
-function employeeController($scope, $filter, EmployeeService) {
+function employeeController($scope, $filter, EmployeeService,PageStateManagerService) {
   //Variable declaration
   $scope.employee = {};
+  
   $scope.selectedEducationInfo = {};
+  
 
+  
   //Initialization
   initialize();
 
